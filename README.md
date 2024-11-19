@@ -6,6 +6,9 @@
 
 Project Xi is a component library for Astro + Tailwind projects. They are personalized and may not fit your use-case! Feel free to modify to your liking!
 
+> [!NOTE]
+> Version 1.x.x was unpublished as it was used for playing around with npm, and I did not realize that the same version number cannot be reused even if I unpublished the entire package. Version 2.0.0 represents the first stable release.
+
 ## Installation
 
 You can install the package from [npm](https://www.npmjs.com/package/@ryanliu6/xi):
