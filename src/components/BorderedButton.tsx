@@ -1,6 +1,6 @@
 import React, { type ReactNode } from "react";
 
-import { buttonStyle } from "../styles";
+import { buttonStyle } from "../styles/index.js";
 
 interface BorderedButtonProps {
   id?: string
@@ -14,6 +14,3 @@ export const BorderedButton = ({ id, children }: BorderedButtonProps) => {
     </button>
   )
 }
-
-// For backward compatibility
-export default BorderedButton;

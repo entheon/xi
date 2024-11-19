@@ -1,7 +1,7 @@
 import React, { type ReactNode } from "react";
 
-import { TextLink } from "./TextLink";
-import { BorderedButton } from "./BorderedButton";
+import { TextLink } from "./TextLink.js";
+import { BorderedButton } from "./BorderedButton.js";
 
 interface RedirectButtonProps {
   href: string,
@@ -21,6 +21,3 @@ export const RedirectButton = ({ href, title, children }: RedirectButtonProps) =
     </BorderedButton>
   )
 }
-
-// For backward compatibility
-export default RedirectButton;

@@ -2,7 +2,7 @@ import classNames from "classnames";
 import React, { useState, useEffect } from "react";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 
-import { Themes } from "./types";
+import { Themes } from "./types.js";
 import { buttonStyle } from "../styles";
 
 export const ThemeIcon = () => {
@@ -37,6 +37,3 @@ export const ThemeIcon = () => {
     </button>
   )
 }
-
-// For backward compatibility
-export default ThemeIcon;

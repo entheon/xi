@@ -1,8 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 
-import { Tag } from "./types";
-import { textStyle, hoverColour } from "../styles";
+import { Tag } from "./types.js";
+import { textStyle, hoverColour } from "../styles/index.js";
 
 interface CardProps {
   title: string;
@@ -41,6 +41,3 @@ export const Card = ({ title, description, link, tags }: CardProps) => {
     </a>
   );
 };
-
-// For backward compatibility
-export default Card;
