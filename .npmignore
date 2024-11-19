@@ -1,0 +1,45 @@
+# Source files
+src/
+
+# Development configs
+tsconfig.json
+.eslintrc*
+.prettierrc*
+.editorconfig
+
+# Git files
+.git
+.gitignore
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+
+# Environment variables
+.env*
+
+# Build cache
+.cache/
+.next/
+.nuxt/
+.vuepress/dist
+.docz/
+.serverless/
+
+# Test files
+__tests__/
+*.test.*
+*.spec.*
+
+# Misc
+.DS_Store
+Thumbs.db
