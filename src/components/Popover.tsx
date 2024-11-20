@@ -4,12 +4,12 @@ import React, { Fragment, type ReactNode } from "react";
 import { Popover, PopoverButton, PopoverPanel, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
-import { buttonStyle } from "../styles";
+import { buttonStyle } from "../styles/index.js";
 
 interface PopoverProps {
-  text?: string,
-  icon?: string,
-  children: ReactNode,
+  text?: string;
+  icon?: string;
+  children: ReactNode;
 }
 
 export const IconedPopover = ({ text, icon, children }: PopoverProps) => {
@@ -57,6 +57,3 @@ export const IconedPopover = ({ text, icon, children }: PopoverProps) => {
     </Popover>
   )
 };
-
-// For backward compatibility
-export default IconedPopover;

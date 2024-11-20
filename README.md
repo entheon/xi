@@ -17,6 +17,25 @@ You can install the package from [npm](https://www.npmjs.com/package/@ryanliu6/x
 npm install @ryanliu6/xi
 ```
 
+## Setup
+
+### Styles
+This library uses Tailwind CSS for styling. To use the components properly, you need to:
+
+1. Make sure you have Tailwind CSS installed in your project
+2. Add the library's CSS file to your project's Tailwind content configuration:
+
+```js
+// tailwind.config.js
+export default {
+  content: [
+    // ... your other content paths
+    "./node_modules/@ryanliu6/xi/dist/**/*.js",  // Add this line
+  ],
+  // ... rest of your config
+}
+```
+
 ## Components
 
 ### BorderedButton

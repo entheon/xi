@@ -2,8 +2,8 @@ import classNames from "classnames";
 import React, { useState, useEffect } from "react";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/outline";
 
-import { Themes } from "./types";
-import { buttonStyle } from "../styles";
+import { Themes } from "./types.js";
+import { buttonStyle } from "../styles/index.js";
 
 export const ThemeIcon = () => {
   const [darkMode, setDarkMode] = useState<boolean>(true);
@@ -37,6 +37,3 @@ export const ThemeIcon = () => {
     </button>
   )
 }
-
-// For backward compatibility
-export default ThemeIcon;

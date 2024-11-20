@@ -1,4 +1,4 @@
-import type { Tag } from "./types";
+import type { Tag } from "./types.js";
 
 // GitHub language colors from https://github.com/ozh/github-colors/blob/master/colors.json
 export const languageColours: { [key: string]: string } = {

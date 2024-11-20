@@ -11,16 +11,19 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./components/*": {
-      "import": "./dist/components/*.js",
-      "types": "./dist/components/*.d.ts"
-    }
+    "./styles": {
+      "import": "./dist/styles/index.js",
+      "types": "./dist/styles/index.d.ts"
+    },
+    "./styles.css": "./dist/styles/main.css"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "npm run build:ts && npm run build:css",
+    "build:ts": "tsc",
+    "build:css": "tailwindcss -i ./src/styles/main.css -o ./dist/styles/main.css --minify",
     "prepare": "npm run build"
   },
   "keywords": [],
