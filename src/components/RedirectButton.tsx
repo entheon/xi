@@ -4,9 +4,9 @@ import { TextLink } from "./TextLink.js";
 import { BorderedButton } from "./BorderedButton.js";
 
 interface RedirectButtonProps {
-  href: string,
-  title: string,
-  children: ReactNode,
+  href: string;
+  title: string;
+  children: ReactNode;
 }
 
 export const RedirectButton = ({ href, title, children }: RedirectButtonProps) => {

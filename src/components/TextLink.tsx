@@ -3,9 +3,9 @@ import React, { type ReactNode } from "react";
 import { linkStyle } from "../styles/index.js";
 
 interface LinkProps {
-  href: string,
-  title: string,
-  children: ReactNode
+  href: string;
+  title: string;
+  children: ReactNode;
 }
 
 export const TextLink = ({ href, title, children }: LinkProps) => {

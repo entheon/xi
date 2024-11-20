@@ -7,9 +7,9 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { buttonStyle } from "../styles/index.js";
 
 interface PopoverProps {
-  text?: string,
-  icon?: string,
-  children: ReactNode,
+  text?: string;
+  icon?: string;
+  children: ReactNode;
 }
 
 export const IconedPopover = ({ text, icon, children }: PopoverProps) => {
