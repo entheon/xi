@@ -1,6 +1,6 @@
 {
   "name": "@ryanliu6/xi",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "type": "module",
   "description": "Project Xi is a component library for my personal Astro + Tailwind projects.",
   "main": "./dist/index.js",
