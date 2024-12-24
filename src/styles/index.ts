@@ -1,6 +1,8 @@
 import classNames from "classnames";
 
-export const textStyle = classNames("text-sm font-roboto text-slate-600 dark:text-zinc-300");
+export const textBase = classNames("font-roboto text-slate-600 dark:text-zinc-300");
+
+export const textStyle = classNames("text-sm", textBase);
 
 export const mdStyle = classNames(textStyle, "prose dark:prose-invert max-w-none");
 
