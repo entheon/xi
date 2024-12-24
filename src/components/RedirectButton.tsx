@@ -12,12 +12,9 @@ interface RedirectButtonProps {
 export const RedirectButton = ({ href, title, children }: RedirectButtonProps) => {
   return (
     <BorderedButton>
-      <TextLink
-        href={href}
-        title={title}
-      >
+      <TextLink href={href} title={title}>
         {children}
       </TextLink>
     </BorderedButton>
-  )
-}
+  );
+};

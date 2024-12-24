@@ -10,14 +10,8 @@ interface LinkProps {
 
 export const TextLink = ({ href, title, children }: LinkProps) => {
   return (
-    <a
-      className={linkStyle}
-      href={href}
-      rel="noopener noreferrer"
-      target="_blank"
-      title={title}
-    >
+    <a className={linkStyle} href={href} rel="noopener noreferrer" target="_blank" title={title}>
       {children}
     </a>
-  )
-}
+  );
+};

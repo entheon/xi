@@ -16,25 +16,21 @@ export const IconedPopover = ({ text, icon, children }: PopoverProps) => {
   const Display = () => {
     // Assumes that one of text or icon has to be defined
     if (typeof text !== "undefined") {
-      return (
-        <span>{text}</span>
-      )
-    } else  {
+      return <span>{text}</span>;
+    } else {
       return (
         <div className={buttonStyle}>
           <img height="24" width="24" alt="Icon" src={`https://cdn.simpleicons.org/${icon}`} />
         </div>
-      )
+      );
     }
-  }
+  };
 
   return (
     <Popover className="relative">
       <PopoverButton className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6">
         <Display />
-        { typeof text !== "undefined" &&
-          <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
-        }
+        {typeof text !== "undefined" && <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />}
       </PopoverButton>
 
       <Transition
@@ -48,12 +44,10 @@ export const IconedPopover = ({ text, icon, children }: PopoverProps) => {
       >
         <PopoverPanel className="absolute left-1/2 z-10 mt-5 flex w-48 max-w-max -translate-x-1/2 px-4">
           <div className="w-48 max-w-md flex-auto overflow-hidden rounded-lg text-sm leading-6 shadow-lg ring-1 bg-violet-50 dark:bg-slate-900">
-            <div className="p-4">
-              {children}
-            </div>
+            <div className="p-4">{children}</div>
           </div>
         </PopoverPanel>
       </Transition>
     </Popover>
-  )
+  );
 };

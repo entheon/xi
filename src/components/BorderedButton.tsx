@@ -12,5 +12,5 @@ export const BorderedButton = ({ id, children }: BorderedButtonProps) => {
     <button id={id ? id : undefined} className={buttonStyle}>
       {children}
     </button>
-  )
-}
+  );
+};

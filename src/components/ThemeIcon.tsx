@@ -13,19 +13,19 @@ export const ThemeIcon = () => {
 
   const toggleTheme = () => {
     setDarkMode(!darkMode);
-  }
+  };
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem(Themes.theme) || Themes.dark
+    const storedTheme = localStorage.getItem(Themes.theme) || Themes.dark;
     setDarkMode(storedTheme == Themes.dark);
   }, []);
 
   useEffect(() => {
     if (darkMode) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
       localStorage.setItem(Themes.theme, Themes.dark);
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
       localStorage.setItem(Themes.theme, Themes.light);
     }
   }, [darkMode]);
@@ -35,5 +35,5 @@ export const ThemeIcon = () => {
       <SunIcon id="themeLightIcon" className={darkIconClass} />
       <MoonIcon id="themeDarkIcon" className={lightIconClass} />
     </button>
-  )
-}
+  );
+};
