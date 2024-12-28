@@ -20,6 +20,7 @@ npm install @ryanliu6/xi
 ## Setup
 
 ### Styles
+
 This library uses Tailwind CSS for styling. To use the components properly, you need to:
 
 1. Make sure you have Tailwind CSS installed in your project
@@ -30,37 +31,39 @@ This library uses Tailwind CSS for styling. To use the components properly, you 
 export default {
   content: [
     // ... your other content paths
-    "./node_modules/@ryanliu6/xi/dist/**/*.js",  // Add this line
+    "./node_modules/@ryanliu6/xi/dist/**/*.js", // Add this line
   ],
   // ... rest of your config
-}
+};
 ```
 
 ## Components
 
 ### BorderedButton
+
 A button component with consistent styling and hover effects.
 
 ```tsx
-import { BorderedButton } from '@ryanliu6/xi';
+import { BorderedButton } from "@ryanliu6/xi";
 
 <BorderedButton id="my-button">
   <p>Click me</p>
-</BorderedButton>
+</BorderedButton>;
 ```
 
 All child elements are passed through to the button.
 
 ### Card
+
 A card component for displaying content with title, description, and tags.
 
 ```tsx
-import { Card } from '@ryanliu6/xi';
-import type { Tag } from '@ryanliu6/xi';
+import { Card } from "@ryanliu6/xi";
+import type { Tag } from "@ryanliu6/xi";
 
 const tags: Tag[] = [
-  { name: 'JavaScript', colour: '#f7df1e' },
-  { name: 'React', colour: '#61dafb' }
+  { name: "JavaScript", colour: "#f7df1e" },
+  { name: "React", colour: "#61dafb" },
 ];
 
 <Card
@@ -68,7 +71,7 @@ const tags: Tag[] = [
   description="A cool project"
   link="https://github.com/myproject"
   tags={tags}
-/>
+/>;
 ```
 
 My current use-case is to display projects on my portfolio, for which Cards are clickable and will take the user to the project's GitHub repository or website. In my use-case, since the cards represent projects, the `tags` prop is used to display the languages used in the project. For a more generic use-case, `tags` could be used to display any other metadata, and `colour` is optional.
@@ -77,14 +80,15 @@ My current use-case is to display projects on my portfolio, for which Cards are 
 > This component is designed 100% to work with Astro's Markdown content translator in mind, and thus not much testing has been done with raw tags. Please report any issues with this component to me via GitHub issues!
 
 ### IconedPopover
+
 A popover component that can display either text or an icon as its trigger.
 
 ```tsx
-import { IconedPopover } from '@ryanliu6/xi';
+import { IconedPopover } from "@ryanliu6/xi";
 
 <IconedPopover text="Click me">
   <div>Popover content</div>
-</IconedPopover>
+</IconedPopover>;
 ```
 
 My current use-case is a dropdown menu for Mobile Navigation, hence the existence of this component.
@@ -93,28 +97,27 @@ My current use-case is a dropdown menu for Mobile Navigation, hence the existenc
 > Currently implemented using @headlessui/react rather than scratch-implemented. Please report any issues with this component to them, unless I'm doing something wrong in particular!
 
 ### TextLink
+
 A styled link component.
 
 ```tsx
-import { TextLink } from '@ryanliu6/xi';
+import { TextLink } from "@ryanliu6/xi";
 
-<TextLink
-  href="https://example.com"
-  title="Visit Example"
->
+<TextLink href="https://example.com" title="Visit Example">
   Click here
-</TextLink>
+</TextLink>;
 ```
 
 Represents a link that is styled to look like a text link, with an underline and a hover effect.
 
 ### ThemeIcon
+
 A theme toggle component for switching between light and dark modes.
 
 ```tsx
-import { ThemeIcon } from '@ryanliu6/xi';
+import { ThemeIcon } from "@ryanliu6/xi";
 
-<ThemeIcon />
+<ThemeIcon />;
 ```
 
 An all-in-one component for toggling between light and dark modes. The theme is stored in local storage. To use this component, you'll need to also include the following in your Astro layout:
@@ -155,8 +158,8 @@ import {
   shadowBorder,
   bodyBorder,
   mainBorder,
-  marginalBorder
-} from '@ryanliu6/xi/styles';
+  marginalBorder,
+} from "@ryanliu6/xi/styles";
 ```
 
 ## Types
@@ -164,8 +167,8 @@ import {
 The package includes TypeScript types:
 
 ```tsx
-import type { Tag } from '@ryanliu6/xi';
-import { Themes } from '@ryanliu6/xi';
+import type { Tag } from "@ryanliu6/xi";
+import { Themes } from "@ryanliu6/xi";
 ```
 
 These are used in `Card` and `ThemeIcon` respectively. I don't forsee any use-case for `Theme`, but `Tag` can be used for any custom tags you wish for `Card`.

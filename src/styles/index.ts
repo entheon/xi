@@ -14,7 +14,7 @@ export const hoverColour = classNames(
 
 export const buttonStyle = classNames("flex rounded-lg p-2 transition", hoverColour);
 
-export const linkStyle = classNames("font-bold", "transition", "hover:text-cyan-500");
+export const linkStyle = classNames("font-bold", "transition", "hover:text-sky-600");
 
 export const flexStyle = classNames("flex flex-col flex-1");
 
