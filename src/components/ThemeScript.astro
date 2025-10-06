@@ -1,0 +1,43 @@
+---
+/**
+ * ThemeScript Component
+ *
+ * This component initializes the theme (dark/light mode) on page load by reading
+ * from localStorage and applying the appropriate class to the document element.
+ * This prevents flash of unstyled content (FOUC) when the page loads.
+ *
+ * Supports both manual theme selection and system preference:
+ * - If theme is set in localStorage, uses that value
+ * - Otherwise, defers to system preference (prefers-color-scheme)
+ *
+ * Usage:
+ * Import this component in your Astro layout's <head> section:
+ *
+ * ```astro
+ * ---
+ * import ThemeScript from '@ryanliu6/xi/ThemeScript.astro';
+ * ---
+ *
+ * <html lang="en">
+ *   <head>
+ *     <ThemeScript />
+ *     ...
+ *   </head>
+ * </html>
+ * ```
+ */
+---
+
+<script is:inline>
+	const THEME_KEY = "theme";
+	const THEME_DARK = "dark";
+
+	// Apply dark class if:
+	// 1. localStorage explicitly set to "dark", OR
+	// 2. No localStorage value AND system prefers dark mode
+	document.documentElement.classList.toggle(
+		THEME_DARK,
+		localStorage.theme === THEME_DARK ||
+			(!(THEME_KEY in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+	);
+</script>

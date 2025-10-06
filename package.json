@@ -1,6 +1,6 @@
 {
   "name": "@ryanliu6/xi",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "type": "module",
   "description": "Project Xi is a component library for my personal Astro + Tailwind projects.",
   "main": "./dist/index.js",
@@ -15,15 +15,17 @@
       "import": "./dist/styles/index.js",
       "types": "./dist/styles/index.d.ts"
     },
-    "./styles.css": "./dist/styles/main.css"
+    "./styles.css": "./dist/styles/main.css",
+    "./ThemeScript.astro": "./src/components/ThemeScript.astro"
   },
   "files": [
-    "dist"
+    "dist",
+    "src/components/ThemeScript.astro"
   ],
   "scripts": {
     "build": "npm run build:ts && npm run build:css",
     "build:ts": "tsc",
-    "build:css": "tailwindcss -i ./src/styles/main.css -o ./dist/styles/main.css --minify",
+    "build:css": "cp ./src/styles/main.css ./dist/styles/main.css",
     "prepare": "npm run build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -33,27 +35,27 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@types/react": "^18.3.12",
-    "@typescript-eslint/eslint-plugin": "^8.18.2",
-    "@typescript-eslint/parser": "^8.18.2",
-    "eslint": "^9.17.0",
+    "@types/react": "^18.3.18",
+    "@typescript-eslint/eslint-plugin": "^8.19.0",
+    "@typescript-eslint/parser": "^8.19.0",
+    "eslint": "^9.18.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.3",
     "eslint-plugin-react-hooks": "^5.1.0",
     "prettier": "^3.4.2",
-    "typescript": "^5.0.0"
+    "typescript": "^5.7.2"
   },
   "peerDependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.3.1"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
-    "@tailwindcss/typography": "^0.5.15",
+    "@tailwindcss/typography": "^0.5.16",
     "classnames": "^2.5.1",
-    "tailwindcss": "^3.4.15"
+    "tailwindcss": "^4.0.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
