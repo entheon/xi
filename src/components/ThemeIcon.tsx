@@ -16,8 +16,15 @@ export const ThemeIcon = () => {
   };
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem(Themes.theme) || Themes.dark;
-    setDarkMode(storedTheme == Themes.dark);
+    // If theme is explicitly set in localStorage, use that
+    if (Themes.theme in localStorage) {
+      const storedTheme = localStorage.getItem(Themes.theme);
+      setDarkMode(storedTheme === Themes.dark);
+    } else {
+      // Otherwise, check system preference
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setDarkMode(prefersDark);
+    }
   }, []);
 
   useEffect(() => {

@@ -14,28 +14,63 @@ Project Xi is a component library for Astro + Tailwind projects. They are person
 You can install the package from [npm](https://www.npmjs.com/package/@ryanliu6/xi):
 
 ```bash
-npm install @ryanliu6/xi
+npm (pnpm) install @ryanliu6/xi
 ```
 
 ## Setup
 
 ### Styles
 
-This library uses Tailwind CSS for styling. To use the components properly, you need to:
+This library uses Tailwind CSS v4 for styling. Tailwind CSS v4 uses a new architecture that requires integration through your build tool.
 
-1. Make sure you have Tailwind CSS installed in your project
-2. Add the library's CSS file to your project's Tailwind content configuration:
+**For Astro Projects:**
+
+1. Install Tailwind CSS v4 and the Vite plugin:
+
+```bash
+npm (pnpm) install tailwindcss@^4 @tailwindcss/vite
+```
+
+2. Update your `astro.config.mjs`:
 
 ```js
-// tailwind.config.js
-export default {
-  content: [
-    // ... your other content paths
-    "./node_modules/@ryanliu6/xi/dist/**/*.js", // Add this line
-  ],
-  // ... rest of your config
-};
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
+
+export default defineConfig({
+  vite: {
+    plugins: [tailwindcss()],
+  },
+});
 ```
+
+3. Import the library's CSS in your main CSS file or layout:
+
+```css
+@import "@ryanliu6/xi/styles.css";
+```
+
+### Theme Initialization (Required for ThemeIcon)
+
+If you're using the `ThemeIcon` component for dark mode toggling, you need to initialize the theme in your Astro layout. You can now use the provided `ThemeScript` component:
+
+```astro
+---
+import ThemeScript from '@ryanliu6/xi/ThemeScript.astro';
+---
+
+<html lang="en">
+  <head>
+    <ThemeScript />
+    <!-- ... other head content -->
+  </head>
+  <body>
+    <!-- ... body content -->
+  </body>
+</html>
+```
+
+This component handles the theme initialization and prevents flash of unstyled content (FOUC) when the page loads.
 
 ## Components
 
@@ -120,27 +155,11 @@ import { ThemeIcon } from "@ryanliu6/xi";
 <ThemeIcon />;
 ```
 
-An all-in-one component for toggling between light and dark modes. The theme is stored in local storage. To use this component, you'll need to also include the following in your Astro layout:
+An all-in-one component for toggling between light and dark modes. The theme is stored in local storage and persists across page reloads.
 
-```astro
-<html lang="en">
-	<head>
-    ...
-		<script is:inline>
-			const THEME_KEY = "theme";
-			const THEME_DARK = "dark";
+**System Preference Support:** The component respects the system's `prefers-color-scheme` setting by default. When a user manually toggles the theme, their explicit choice is saved and takes precedence. To reset to system preference, remove the `theme` key from localStorage: `localStorage.removeItem('theme')`.
 
-			if (typeof localStorage !== "undefined") {
-				const storedTheme = localStorage.getItem(THEME_KEY) || THEME_DARK
-				if (storedTheme == THEME_DARK) {
-					document.documentElement.classList.add(THEME_DARK);
-				} else {
-					document.documentElement.classList.remove(THEME_DARK);
-				}
-			}
-		</script>
-	</head>
-```
+**Important:** To use this component, you must also include the `ThemeScript` component in your Astro layout's `<head>` section (see [Theme Initialization](#theme-initialization-required-for-themeicon) above). This ensures the theme is applied before the page renders, preventing any flash of unstyled content.
 
 ## Styles
 
@@ -175,7 +194,10 @@ These are used in `Card` and `ThemeIcon` respectively. I don't forsee any use-ca
 
 ## Requirements
 
-- React 18+
-- Tailwind CSS 3+
+- React 18.3+
+- Tailwind CSS 4+
 - @headlessui/react 2+
 - @heroicons/react 2+
+
+> [!IMPORTANT]
+> Version 3.0.0+ requires Tailwind CSS v4. If you're using Tailwind CSS v3, please use version 2.x of this library.
