@@ -34,8 +34,8 @@ npm install tailwindcss@^4 @tailwindcss/vite
 2. Update your `astro.config.mjs`:
 
 ```js
-import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from "astro/config";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   vite: {
@@ -47,7 +47,7 @@ export default defineConfig({
 3. Import the library's CSS in your main CSS file or layout:
 
 ```css
-@import '@ryanliu6/xi/styles.css';
+@import "@ryanliu6/xi/styles.css";
 ```
 
 ### Theme Initialization (Required for ThemeIcon)
