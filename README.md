@@ -14,7 +14,7 @@ Project Xi is a component library for Astro + Tailwind projects. They are person
 You can install the package from [npm](https://www.npmjs.com/package/@ryanliu6/xi):
 
 ```bash
-npm install @ryanliu6/xi
+npm (pnpm) install @ryanliu6/xi
 ```
 
 ## Setup
@@ -28,7 +28,7 @@ This library uses Tailwind CSS v4 for styling. Tailwind CSS v4 uses a new archit
 1. Install Tailwind CSS v4 and the Vite plugin:
 
 ```bash
-npm install tailwindcss@^4 @tailwindcss/vite
+npm (pnpm) install tailwindcss@^4 @tailwindcss/vite
 ```
 
 2. Update your `astro.config.mjs`:

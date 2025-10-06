@@ -1,2 +1,2 @@
 echo "🧪 Running lint-staged..."
-npx lint-staged
+pnpm lint-staged

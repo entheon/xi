@@ -23,7 +23,7 @@
     "src/components/ThemeScript.astro"
   ],
   "scripts": {
-    "build": "npm run build:ts && npm run build:css",
+    "build": "pnpm build:ts && pnpm build:css",
     "build:ts": "tsc",
     "build:css": "cp ./src/styles/main.css ./dist/styles/main.css",
     "prepare": "husky",
