@@ -12,7 +12,7 @@ interface CardProps {
 }
 
 export const Card = ({ title, description, link, tags }: CardProps) => {
-  const cardClasses = classNames("p-4", hoverColour, textStyle);
+  const cardClasses = classNames("p-4 rounded-2xl", hoverColour, textStyle);
 
   return (
     <a className="p-4" href={link} target="_blank" rel="noopener noreferrer">

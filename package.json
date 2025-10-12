@@ -1,6 +1,6 @@
 {
   "name": "@ryanliu6/xi",
-  "version": "3.1.0",
+  "version": "3.1.0-alpha.2",
   "type": "module",
   "description": "A hybrid component library for Astro + Tailwind projects. Provides both fully-styled components and composable Tailwind style primitives.",
   "main": "./dist/index.js",
