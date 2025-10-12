@@ -1,8 +1,14 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+@source "../**/*.{js,ts,jsx,tsx,astro}";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-family-roboto: "Roboto";
+}
+
+@utility font-roboto {
+  font-family: var(--font-family-roboto);
 }

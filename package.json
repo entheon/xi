@@ -1,8 +1,8 @@
 {
   "name": "@ryanliu6/xi",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "type": "module",
-  "description": "Project Xi is a component library for my personal Astro + Tailwind projects.",
+  "description": "A hybrid component library for Astro + Tailwind projects. Provides both fully-styled components and composable Tailwind style primitives.",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -20,7 +20,7 @@
   },
   "files": [
     "dist",
-    "src/components/ThemeScript.astro"
+    "src"
   ],
   "scripts": {
     "build": "pnpm build:ts && pnpm build:css",
@@ -31,7 +31,18 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write ."
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "astro",
+    "tailwindcss",
+    "tailwind",
+    "component-library",
+    "ui",
+    "design-system",
+    "style-primitives",
+    "hybrid-library",
+    "typescript"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {

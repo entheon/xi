@@ -17,8 +17,8 @@ export const ThemeIcon = () => {
 
   useEffect(() => {
     // If theme is explicitly set in localStorage, use that
-    if (Themes.theme in localStorage) {
-      const storedTheme = localStorage.getItem(Themes.theme);
+    const storedTheme = localStorage.getItem(Themes.theme);
+    if (storedTheme !== null) {
       setDarkMode(storedTheme === Themes.dark);
     } else {
       // Otherwise, check system preference
